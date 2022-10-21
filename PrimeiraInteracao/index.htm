@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação</title>
+
+    <style>
+
+        div#area{
+            font: normal 22pt arial;
+            background-color: chartreuse;
+            width: 200px;
+            height: 100px;
+            line-height: 100px; /*centraliza o texto na vertical*/
+            text-align: center; /*centraliza o texto na horizontal*/
+        }
+        body{background-color: rgb(1, 1, 78); }
+        p{color: aliceblue;}
+
+    </style>
+</head>
+<body>
+    <div id="area">Click em mim!</div>
+
+    <p>precione ctrl + R para reiniciar a pagina.</p>
+
+    <script>
+        let bloco = window.document.getElementById('area')
+
+        bloco.addEventListener('click',clicar)
+        bloco.addEventListener('mouseenter',entrar)
+        bloco.addEventListener('mouseout',sair)
+
+        function clicar(){ //evento ao clicar no bloco
+            bloco.innerText = 'Clicou!'
+            bloco.style.backgroundColor = 'red'
+        }
+
+        function entrar(){ //evento ao entrar no bloco
+            bloco.innerText = 'Entrou'
+        }
+
+        function sair(){ //evento ao sair do bloco
+            bloco.innerText = 'Saiu'
+        }
+
+    </script>
+</body>
+</html>
